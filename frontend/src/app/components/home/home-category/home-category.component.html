@@ -1,0 +1,10 @@
+<br/>
+<h4>Categories</h4>
+<br/>
+<table >
+    <tr>
+        <td *ngFor="let category of Categories.slice(0,4)">
+            <mcp-category-card [category]="category" ></mcp-category-card>
+        </td>
+    </tr>
+</table>

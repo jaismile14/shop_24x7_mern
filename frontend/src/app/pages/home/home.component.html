@@ -1,0 +1,12 @@
+
+<div class="container"> 
+    <div *ngIf="!authenticated">
+        <mcp-home-welcome [type]="register"></mcp-home-welcome>
+    </div>
+    <div *ngIf="authenticated">
+        <mcp-home-banner></mcp-home-banner>
+        <mcp-home-category></mcp-home-category>
+        <mcp-home-product></mcp-home-product>
+    </div>
+</div>    
+    

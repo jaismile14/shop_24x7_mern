@@ -1,0 +1,34 @@
+.productContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 960px;
+    margin: auto;
+}
+.productImage{
+    border: 1px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.strikePrice{
+    color: red;
+    font-size: medium;
+}
+// h3{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     text-align: center;
+//   }
+// table, th, td {
+//     border: 1px solid;
+//   }
+
+.showborder{
+    border-radius: 35px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+
+}

@@ -1,0 +1,57 @@
+body {
+    background-color: #a2dfe0
+}
+
+.container {
+    height: 50vh
+}
+
+.card {
+    background-color: #c1e8ed;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #eee
+}
+
+.inner-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+// .heart {
+//     cursor: pointer;
+//     height: 35px;
+//     width: 35px;
+//     font-size: 13px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #beb4aa;
+//     border-radius: 50%;
+//     background-color: #eee
+// }
+
+.btn:focus {
+    color: #fff;
+    background-color: #025ce2;
+    border-color: #0257d5;
+    box-shadow: none
+}
+
+.image{
+    height: 100px;
+}
+.strikePrice{
+    color: red;
+    font-size: medium;
+}
+
+.outer
+{
+    width:100%;
+}
+.inner
+{
+    display: inline-block;
+}

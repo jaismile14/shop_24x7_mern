@@ -1,0 +1,31 @@
+
+<h3>Popular Products</h3>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+      <!-- <div class="carousel-item" *ngFor="let result of data; let i = index" [ngClass]="{'active': i === 1}">
+       <img src={{result.img}} title={{result.title}} />
+       <div class="carousel-caption">
+        <h3>Los Angeles</h3>
+        <p>We had such a great time in LA!</p>
+      </div> -->
+      <div class="carousel-item carouselImage" *ngFor="let product of Products; let i = index" [ngClass]="{'active': i === 1}">
+        <!-- <div class="carouselImage"> -->
+          <img  src={{product.image}} />
+        <!-- </div> -->
+        
+        <div class="carousel-caption">
+         <h3>{{product.title}}</h3>
+         <p>{{product.description}}</p>
+       </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

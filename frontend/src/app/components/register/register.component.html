@@ -1,0 +1,54 @@
+<div class="container-fluid form-group">
+    <section class="container">
+		<div class="container-page">
+            <form accept-charset="UTF-8"  [formGroup]="form"  (ngSubmit)="registerUser()">
+			<div class="col-md-6">
+				<h3 class="dark-grey">Register</h3>
+
+				<div class="form-group col-lg-12">
+					<label>Firstname</label>
+					<input type="text" name="firstName" class="form-control" formControlName="firstName" >
+					<div class="errors" *ngIf="firstName && firstName.touched && firstName.errors">
+						<p *ngIf="firstName.errors['required']">Required value</p>
+					</div>
+				</div>
+                <div class="form-group col-lg-12">
+					<label>Lastname</label>
+					<input type="text" name="lastName" class="form-control" formControlName="lastName">
+					<div class="errors" *ngIf="lastName && lastName.touched &&  lastName.errors">
+						<p *ngIf="lastName.errors['required']">Required value</p>
+					</div>
+				</div>
+				<div class="form-group col-lg-12">
+					<label>Email Address</label>
+					<input type="text" name="email" class="form-control" formControlName="email">
+					<div class="errors" *ngIf="email && email.touched &&  email.errors">
+						<p *ngIf="email.errors['required']">Required value</p>
+						<p *ngIf="email.errors['pattern']">Not a valid email</p>
+					</div>
+				</div>
+				<div class="form-group col-lg-12">
+					<label>Password</label>
+					<input type="password" name="password" class="form-control" formControlName="password">
+					<div class="errors" *ngIf="password && password.touched &&  password.errors">
+						<p *ngIf="password.errors['required']">Required value</p>
+					</div>
+				</div>
+
+				<div class="form-group col-lg-12">
+					<label>Confirm Password</label>
+					<input type="password" name="" class="form-control" name="confirmPassword" formControlName="confirmPassword">
+					<div class="errors" *ngIf="form && form.touched && form.dirty &&  form.errors">
+						<p *ngIf="form.errors['compare']">Passwords does not match.</p>
+					</div>
+				</div>
+			</div>
+            <br/>
+			<div class="col-md-6">
+				<button type="submit" class="btn btn-primary" [disabled]="form.status==='INVALID'">Register</button>
+			</div>
+        </form>
+		</div>
+	</section>
+</div>
+

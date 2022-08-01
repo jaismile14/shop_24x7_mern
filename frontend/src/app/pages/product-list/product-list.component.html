@@ -1,0 +1,16 @@
+<div class="Container">
+    <br/>
+    <h4>Products for {{Category}}</h4>
+    <table >
+        <tr>
+            <td *ngFor="let product of Products">
+                <mcp-product-card [product]="product"></mcp-product-card>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td *ngFor="let product of Products.slice(4,8)">
+                <mcp-product-card [product]="product" ></mcp-product-card>
+            </td>
+        </tr> -->
+    </table>
+</div>

@@ -1,0 +1,66 @@
+
+  <header class="p-3 mb-3 border-bottom bg-warning">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg> -->
+          <h5 class="my-0 mr-md-auto font-weight-normal">Shop 24x7</h5>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/home" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="/departments" class="nav-link px-2 link-dark">Departments</a></li>
+          <li><a href="/products" class="nav-link px-2 link-dark">Products</a></li>
+          <li><a href="/profile" class="nav-link px-2 link-dark">Profile</a></li>
+          <li *ngIf="isAdmin"><a href="/admin" class="nav-link px-2 link-dark">Admin Controls</a></li>
+        </ul>
+        <div *ngIf="authenticated">Welcome <b>{{firstName | titlecase}}</b></div> &nbsp;&nbsp;
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control" placeholder="Search Products" aria-label="Search">
+        </form>
+
+        <div class="dropdown text-end">
+          <a href="/cart" class="d-block link-dark text-decoration-none" id="dropdownUser1" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <span [ngModel]="Cart.length" #cartitem="ngModel"  name="cartitem" ngDefaultControl >{{Cart.length}}</span>
+          </a>
+
+        </div>
+        <!-- {{isAdmin}}
+        {{isLoggedIn}}
+        {{firstName}} -->
+        <!-- <div *ngIf="isAdmin" class="okaydown me-2">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+            Admin Controls
+          </button>
+
+        
+          <ul>
+            <li><a routerLink="/manage-products" class="dropdown-item">Manage Products</a></li>
+            <li><a routerLink="/manage-users" class="dropdown-item">Manage Users</a></li>
+            <li><a routerLink="/manage-orders" class="dropdown-item">Manage Orders</a></li>
+            <li><a routerLink="/profile" class="dropdown-item">Profile</a></li>
+          </ul>
+      </div> -->
+      <!-- <div *ngIf="authenticated" class="okaydown me-2">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+           {{firstName | titlecase}}
+        </button>
+
+          <ul>
+          <li ><a routerLink="/orders" class="dropdown-item">Orders</a></li>
+          <li><a routerLink="/profile" class="dropdown-item">Profile</a></li>
+        </ul>
+    </div> -->
+
+        <div *ngIf="authenticated">
+          &nbsp;&nbsp;<input type="button" value="Log Off" class="btn btn-block btn-primary" (click)="LogOff()">
+        </div>
+        <div *ngIf="!authenticated">
+          &nbsp;&nbsp;<a class="btn btn-block btn-primary" href="/register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,87 @@
+
+<!-- <img src="https://img.webnots.com/2017/05/Slide-Only-Carousel.png"/> -->
+<div class="productContainer">
+<table class="showborder">
+    <tr>
+        <td colspan="2" >
+            <h3>{{Product.category.name}}</h3>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" >
+            <img class="productImage" src="{{Product.image}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:50%">
+            <table style="width:100%">
+                <tr>
+                    <td >
+                        <!-- <div class="px-1"> -->
+                            <h3>${{Product.discountprice}}</h3><s class="strikePrice">${{Product.price}}</s>
+                        <!-- </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Buy Now" class="btn btn-block btn-warning">
+                        &nbsp;
+                        <input type="button" value="Add to cart" class="btn btn-block btn-primary" (click)="AddToCart(selectedQuantity)">
+                        &nbsp;
+                        <select name="quatity" id="quatity" [(ngModel)]="selectedQuantity" >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                    </td>
+                    
+                </tr>
+            </table>
+        </td>
+        <td >
+            {{Product.description}}
+        </td>
+    </tr>
+    
+</table>
+<br/>
+<table >
+    <tr>
+        <td>
+            <h4>Recommended Products</h4>
+        </td>
+    </tr>
+    <tr>
+        <td *ngFor="let product of Products.slice(0,4)">
+            <mcp-product-card [product]="product" (click)="openProductDetails(product._id)"></mcp-product-card>
+        </td>
+    </tr>
+    <tr>
+        <td *ngFor="let product of Products.slice(4,8)">
+            <mcp-product-card [product]="product" (click)="openProductDetails(product._id)"></mcp-product-card>
+        </td>
+    </tr>
+</table>
+</div>
+
+<!-- 
+"price": 400,
+    "discountprice": 350,
+    "image": "http://localhost:3000/public/uploads/Samsung-Galaxy-S10e-Dual-SIM-Black-1604697997106.png",
+    "isTopProduct": true,
+    "_id": "6209c2227173b74d3092154a",
+    "name": "Aashirwaad Aata Multi Grain",
+    "category": {
+        "_id": "6209bca8c0bc334ad4117a08",
+        "name": "Grocery",
+        "icon": "palette",
+        "color": "#F0E8DE",
+        "__v": 0,
+        "id": "6209bca8c0bc334ad4117a08"
+    },
+    "description": "Sudh desi aata",
+    "dateCreated": "2022-02-14T02:44:50.011Z",
+    "__v": 0,
+    "id": "6209c2227173b74d3092154a"
+} -->

@@ -1,0 +1,30 @@
+<div class="container">
+    
+    <table>
+        <tr>
+            <td><h3>Cart</h3></td>
+            <td></td>
+            <td><button class="inner btn btn-warning px-1" (click)="Checkout()">Checkout</button> </td>
+        </tr>
+        <tr *ngFor="let item of Cart">
+            <td>
+                <div>{{item.quantity}}X {{item.product.name}}</div>
+                <div>Price ${{item.product.discountprice}}</div>
+                <div style="color:red; font-size: 10px;">Discount ${{item.product.price - item.product.discountprice}}</div>
+                <hr/>
+            </td>
+            <td><hr/></td>
+            <td>
+                <div>${{item.quantity*item.product.discountprice}}</div>
+                
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><button class="inner btn btn-warning px-1" (click)="Checkout()">Checkout</button> </td>
+        </tr>
+    </table>
+    
+</div>
+

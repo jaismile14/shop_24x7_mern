@@ -1,0 +1,9 @@
+table{
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    columns: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

@@ -1,0 +1,113 @@
+
+<div class="container">
+    <div class="row">
+    <!-- <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+         <A href="edit.html" >Edit Profile</A>
+
+      <A href="edit.html" >Logout</A>
+     <br>
+<p class=" text-info">May 05,2014,03:00 pm </p>
+    </div> -->
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+ 
+ 
+        <div class="panel panel-info">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title">Sheena Shrestha</h3>
+          </div> -->
+          <div class="panel-body">
+            <div class="row">
+              <div *ngIf="userProfile" class="col-md-3 col-lg-3  " > 
+                <img alt="User Pic" src="{{userProfile.profilePic}}" class="img-circle img-responsive profilePic"> 
+                <button  class="inner btn btn-warning px-1" (click)="workInProgress()">Delete </button>&nbsp;&nbsp;
+              <button  class="inner btn btn-primary px-1" (click)="workInProgress()">Upload</button>
+              </div>
+              
+              <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                <dl>
+                  <dt>DEPARTMENT:</dt>
+                  <dd>Administrator</dd>
+                  <dt>HIRE DATE</dt>
+                  <dd>11/12/2013</dd>
+                  <dt>DATE OF BIRTH</dt>
+                     <dd>11/12/2013</dd>
+                  <dt>GENDER</dt>
+                  <dd>Male</dd>
+                </dl>
+              </div>-->
+              <div class=" col-md-9 col-lg-9 "> 
+                <table class="table table-user-information" *ngIf="userProfile"> 
+                  <tbody>
+                    <tr>
+                      <td>First Name</td>
+                      <td *ngIf="!isEditMode">{{userProfile.firstName}}</td>
+                        <td *ngIf="isEditMode"><input type="text" [(ngModel)]="userProfile.firstName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td *ngIf="!isEditMode">{{userProfile.lastName}}</td>
+                          <td *ngIf="isEditMode"><input type="text" [(ngModel)]="userProfile.lastName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td >{{userProfile.email}}</td>
+                          
+                    </tr>
+                 
+                       <tr>
+                           <tr>
+                            <td>Phone</td>
+                            <td *ngIf="!isEditMode">{{userProfile.phone}}</td>
+                              <td *ngIf="isEditMode"><input type="text" [(ngModel)]="userProfile.phone" /></td>
+                    </tr>
+                      <tr>
+                        <td>Interests</td>
+                        <td *ngIf="!isEditMode">{{userProfile.interests}}</td>
+                          <td *ngIf="isEditMode"><input type="text" [(ngModel)]="userProfile.interests" /></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td *ngIf="!isEditMode && userProfile.address">{{userProfile.address.street}},{{userProfile.address.city}},{{userProfile.address.state}},{{userProfile.address.zipCode}}</td>
+                          
+                    </tr>
+                    <tr>
+                      <td>
+                        <button *ngIf="!isEditMode" class="inner btn btn-primary px-1" (click)="editUserProfile()">Edit Profile</button>
+                        <button *ngIf="isEditMode" class="inner btn btn-warning px-1" (click)="cancel()">Cancel</button>&nbsp;&nbsp;
+                        <button *ngIf="isEditMode" class="inner btn btn-primary px-1" (click)="saveUserProfile()">Save</button>
+                      </td>
+                      <td *ngIf="isEditMode">
+                        <div class="mb-3">
+                          <label >Street Address</label>
+                          <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="userProfile.address.street">
+                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        </div>
+                        <div class="mb-3">
+                          <label >City</label>
+                          <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="userProfile.address.city">
+                        </div>
+                        <div class="mb-3">
+                          <label >State</label>
+                          <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="userProfile.address.state">
+                        </div>
+                        <div class="mb-3">
+                          <label >Zip Code</label>
+                          <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="userProfile.address.zip">
+                        </div>
+                      </td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                
+                
+                
+              </div>
+            </div>
+          </div>
+               
+          
+        </div>
+      </div>
+    </div>
+  </div>

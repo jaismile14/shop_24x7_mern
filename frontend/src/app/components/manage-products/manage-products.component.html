@@ -1,0 +1,37 @@
+<div class="container"  style="min-height:600px">
+
+  <h2> Manage Products </h2>
+  <div>
+  <a routerLink='/addnewproduct' class="btn btn-outline-primary">Add New product</a>
+  </div>
+
+  <table class="table table-hover" >
+      <thead class="table">
+          <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Department</th>
+              <th>Price</th>
+              <th>Discount Price</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let products of this.productList">
+              <td>{{products.id}}</td>
+              <td>{{products.name}}</td>
+              <td>{{products.category.name}}</td>
+              <td>{{products.price}}</td>
+              <td>{{products.discountprice}}</td>
+
+
+          <td>  <a [routerLink]="['/product/', products.id]" class="btn btn-primary">View Details</a> </td>
+              <td> <a [routerLink]="['/admin/manage-products/edit', products.id]" class="btn btn-success">Edit</a> |
+              <button (click)="deleteProduct(products.id)" class="btn btn-danger">Delete</button>
+          </td>
+          </tr>
+      </tbody>
+
+  </table>
+</div>

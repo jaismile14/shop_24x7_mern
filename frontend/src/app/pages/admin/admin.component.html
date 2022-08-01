@@ -1,0 +1,14 @@
+<div *ngIf="isAdmin" class="okaydown me-2">
+    <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+      Admin Controls
+    </button>
+
+    <!-- <ul class="dropdown-menu"> -->
+    <ul>
+      <li><a routerLink="/manage-products" class="dropdown-item">Manage Products</a></li>
+      <li><a routerLink="/manage-users" class="dropdown-item">Manage Users</a></li>
+      <li><a routerLink="/manage-orders" class="dropdown-item">Manage Orders</a></li>
+      <li><a routerLink="/profile" class="dropdown-item">Profile</a></li>
+    </ul>
+</div>
+<div *ngIf="!isAdmin">You do not have access.</div>
